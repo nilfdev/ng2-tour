@@ -1,23 +1,20 @@
 import { Component } from '@angular/core';
-
-export class Hero {
-  id: number;
-  name: string;
-}
+import { Hero } from './hero'
+import { HeroDetailComponent } from './hero-detail.component'
 
 @Component({
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  styleUrls: ["./app.component.css"],
+  directives: [ HeroDetailComponent ],
 })
 
 export class AppComponent {
   public title = 'Tour of Heroes';
   public selectedHero: Hero;
   public heroes = HEROES;
-
-  onSelect(hero: Hero) {
+  public onSelect(hero: Hero) {
     this.selectedHero = hero;
   }
 }
